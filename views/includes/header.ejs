@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= pageTitle %>
+  </title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link <%= page=='/' ? 'active' : '' %>" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item"><a href="/about" class="nav-link <%= page=='/about' ? 'active' : '' %>">About</a></li>
+        <li class="nav-item"><a href="/add-album" class="nav-link <%= page=='/add-album' ? 'active' : '' %>">Add
+            Album</a></li>
+        <% if(isAuthenticated) { %>
+          <form action="/logout" method="POST">
+            <button class="nav-link" type="submit">Logout</button>
+          </form>
+          <%} else { %>
+            <li class="nav-item"><a href="/login" class="nav-link <%= page=='login' ? 'active' : '' %>">Login</a></li>
+            <li class="nav-item"><a href="/sign-up" class="nav-link <%= page=='sign-up' ? 'active' : '' %>">Sign up</a>
+            </li>
+            <% } %>
+      </ul>
+    </header>
+  </div>

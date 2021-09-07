@@ -1,0 +1,24 @@
+<%- include('includes/header') %>
+
+    <div class="container">
+        <div style="width:50%; margin:auto;">
+            <h1>Edit Album</h1>
+            <form action="/edit-album" method="GET">
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control" id="" value="<%= albums.title %>">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="authorName" class="form-control" id="" value="<%= albums.authorName %>">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="description" id="" value="<%= albums.description %>"
+                        rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/footer') %>

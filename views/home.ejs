@@ -1,0 +1,45 @@
+<%- include('includes/header') %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% if(albums.length> 0) { %>
+          <% for(var i=0; i < albums.length; i++) { let item=albums[i]; %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                  xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="40%" y="50%" fill="#eceeef"
+                    dy=".3em">Thumbnail</text>
+                </svg>
+                <div class="card-body">
+                  <h2 class="card-title">
+                    <%= item.title %>
+                  </h2>
+                  <div style="padding-top: 10px;">
+                    <a class="btn btn-primary" href="/album-details/<%= item.id %>" role="button">View</a>
+                    <a class="btn btn-outline-primary" href="/edit-album" role="button">Edit</a>
+                  </div>
+                  <div style="padding-top: 5px;">
+                    <form action="/delete-album" method="POST">
+                      <input type="hidden" name="id" value="<%= item.id %>">
+                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% } %>
+              <% } else { %>
+                <div class="col">
+                  <h2 class="align-items-center">No Albums Found...!</h2>
+                </div>
+                <% } %>
+      </div>
+    </div>
+  </div>
+  <%- include('includes/footer') %>

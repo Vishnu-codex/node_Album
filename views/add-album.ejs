@@ -1,0 +1,24 @@
+<%- include('includes/header') %>
+
+    <div class="container">
+        <div style="width:50%; margin:auto;">
+            <h1>Add Album</h1>
+            <form action="/add-album" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control" id="" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="authorName" class="form-control" id="" placeholder="Author Name">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="description" id="" placeholder="Description"
+                        rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/footer') %>

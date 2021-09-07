@@ -1,0 +1,23 @@
+<%- include('includes/header') %>
+
+    <div class="container">
+        <div style="width:50%; margin:auto;">
+            <h1>Sign up</h1>
+            <form action="/sign-up" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control" id="" placeholder="Enter Username">
+                </div>
+                <div class="mb-3">
+                    <input type="Password" name="authorName" class="form-control" id="" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <input type="Password" name="authorName" class="form-control" id="" placeholder="Confirm Password">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/footer') %>
